@@ -33,13 +33,15 @@ class PluginTcpdfVersion_6_4_2{
     /**
      * I18N
      */
-    wfPlugin::includeonce('i18n/translate_v1');
-    $i18n = new PluginI18nTranslate_v1();
-    foreach ($data->get('pages') as $key => $value) {
-      foreach ($value as $key2 => $value2) {
-        $item = new PluginWfArray($value2);
-        if($item->get('method')=='MultiCell' || $item->get('method')=='Cell'){
-          $data->set("pages/$key/$key2/data/txt", $i18n->translateFromTheme($item->get('data/txt')));
+    if($data->get('i18n')!==false){
+      wfPlugin::includeonce('i18n/translate_v1');
+      $i18n = new PluginI18nTranslate_v1();
+      foreach ($data->get('pages') as $key => $value) {
+        foreach ($value as $key2 => $value2) {
+          $item = new PluginWfArray($value2);
+          if($item->get('settings/i18n')!==false && ($item->get('method')=='MultiCell' || $item->get('method')=='Cell')){
+            $data->set("pages/$key/$key2/data/txt", $i18n->translateFromTheme($item->get('data/txt')));
+          }
         }
       }
     }

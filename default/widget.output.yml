@@ -12,6 +12,7 @@ html: ''
 filename: 'buto_tcpdf_version_6_2_26.pdf'
 dest: I
 PDF_PAGE_FORMAT: A4
+i18n: true
 data_method_remove_this_to_test_DATA_METHOD:
   plugin: 'tcpdf/version_6_2_26'
   method: data_method_example

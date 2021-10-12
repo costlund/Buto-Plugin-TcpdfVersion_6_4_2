@@ -114,8 +114,27 @@ data:
 ```
 
 ### I18N
+Translation are set by default. One could unset for pdf or element.
 
-MultiCell and Cell are translated with PluginI18nTranslate_v1.
+
+#### PDF
+One could unset translation for pdf via i18n param.
+```
+data:
+  data:
+    i18n: false
+```
+
+#### Element
+MultiCell and Cell are translated with PluginI18nTranslate_v1. One could unset this with param settings/i18n.
+```
+        -
+          method: Cell (or MultiCell)
+          data:
+            txt: Home
+          settings:
+            i18n: false
+```
 
 ### New page
 
