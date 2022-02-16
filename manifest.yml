@@ -1,5 +1,9 @@
-version: 2.1.0
+version: 2.2.0
 history:
+  2.2.0:
+    date: '2022-02-15'
+    title: Slice
+    description: 'If pages not set but slice are set we create pages data. This is for helping in developing advanced pdf documents.'
   2.1.0:
     date: '2021-10-12'
     title: I18N

@@ -31,6 +31,17 @@ class PluginTcpdfVersion_6_4_2{
      */
     $data->set('header_logo', wfSettings::replaceTheme($data->get('header_logo')));
     /**
+     * If pages not set but slice are set we create pages data.
+     * This is for helping in developing advanced pdf documents.
+     */
+    if(!$data->get('pages') && $data->get('slice')){
+      $item = array();
+      foreach($data->get('slice') as $v){
+        $item = array_merge($item, $v);
+      }
+      $data->set('pages', array($item));
+    }
+    /**
      * I18N
      */
     if($data->get('i18n')!==false){

@@ -113,6 +113,22 @@ data:
 
 ```
 
+### Slice
+When develop advanced pdf document it´s a good idea to split up in slices. 
+One could omit pages param and use slice instead.
+When using data_method this is a good idea.
+```
+      slice:
+        first_slice:
+          - {method: SetFont,  data: {size: 9, style: ''}}
+          -
+            method: Cell
+            data:
+              w: 150
+              h: 4
+              txt: Head...
+```
+
 ### I18N
 Translation are set by default. One could unset for pdf or element.
 
