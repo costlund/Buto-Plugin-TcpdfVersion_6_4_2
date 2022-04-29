@@ -6,6 +6,11 @@ class PluginTcpdfVersion_6_4_2{
    */
   public function widget_output($widget_data){
     /**
+     * i18n
+     */
+    wfPlugin::includeonce('i18n/translate_v1');
+    $i18n = new PluginI18nTranslate_v1();
+    /**
      * Include.
      */
     wfPlugin::includeonce('wf/array');
@@ -27,9 +32,15 @@ class PluginTcpdfVersion_6_4_2{
       $data = $obj->$method($data);
     }
     /**
+     * 
+     */
+    $data->set('header_title', $i18n->translateFromTheme($data->get('header_title')));
+    $data->set('header_string', $i18n->translateFromTheme($data->get('header_string')));
+    $data->set('footer_text', $i18n->translateFromTheme($data->get('footer_text')));
+    /**
      * Header logo
      */
-    $data->set('header_logo', wfSettings::replaceTheme($data->get('header_logo')));
+    $data->set('header_logo', wfSettings::replaceDir($data->get('header_logo')));
     /**
      * If pages not set but slice are set we create pages data.
      * This is for helping in developing advanced pdf documents.
@@ -45,8 +56,6 @@ class PluginTcpdfVersion_6_4_2{
      * I18N
      */
     if($data->get('i18n')!==false){
-      wfPlugin::includeonce('i18n/translate_v1');
-      $i18n = new PluginI18nTranslate_v1();
       foreach ($data->get('pages') as $key => $value) {
         foreach ($value as $key2 => $value2) {
           $item = new PluginWfArray($value2);

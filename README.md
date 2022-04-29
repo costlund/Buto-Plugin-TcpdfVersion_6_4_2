@@ -53,6 +53,7 @@ data:
             txt: Cell with bold red text.
             w: 60
             h: 5
+            align: 'C'
         -
           method: Cell
           data:
@@ -69,6 +70,7 @@ data:
             txt: Cell with black text in a new row by calling Ln.
             w: 120
             h: 5
+            align: 'R'
         - {method: Ln}
         -
           method: MultiCell

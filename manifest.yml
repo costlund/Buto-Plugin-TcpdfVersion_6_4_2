@@ -1,5 +1,9 @@
-version: 2.2.0
+version: 2.3.0
 history:
+  2.3.0:
+    date: '2022-04-29'
+    title: I18N
+    description: 'Translations.'
   2.2.0:
     date: '2022-02-15'
     title: Slice
