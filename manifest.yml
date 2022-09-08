@@ -1,9 +1,13 @@
-version: 2.3.0
+version: 2.3.1
 history:
+  2.3.1:
+    date: '2022-09-08'
+    title: Versions
+    description: 'Versions update.'
   2.3.0:
     date: '2022-04-29'
     title: I18N
-    description: 'Translations.'
+    description: Translations.
   2.2.0:
     date: '2022-02-15'
     title: Slice
@@ -14,11 +18,11 @@ history:
     description: 'One could turn off i18n for pdf or an element.'
   2.0.0:
     date: '2021-10-11'
-    title: Version 6.4.2
+    title: 'Version 6.4.2'
     description: 'New version from 6.2.26 to 6.4.2. No changes in methods.'
   1.9.0:
     date: '2021-04-01'
-    title: Pdf page format
+    title: 'Pdf page format'
     description: 'Add default param PDF_PAGE_FORMAT.'
   1.8.0:
     date: '2021-03-17'
@@ -75,10 +79,10 @@ history:
 plugin:
   -
     name: wf/array
-    version: 1.2.0
+    version: 1.2.4
   -
     name: i18n/translate_v1
-    version: 1.7.0
+    version: 1.9.0
 sys:
   -
     name: mercury
