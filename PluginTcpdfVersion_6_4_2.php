@@ -250,7 +250,7 @@ class PluginTcpdfVersion_6_4_2{
   private function WriteHTMLCell($item){
     $w = null; $h = null; $x = null; $y = null; $html=''; $border=0; $ln=0; $fill=false; $reseth=true; $align=''; $autopadding=true;
     if($item->get('data')){foreach ($item->get('data') as $key2 => $value2){eval('$'.$key2.' = "'.$value2.'";');}}
-    $this->pdf->writeHTMLCell( $w, $h, $x, $y, $html='', $border=0, $ln=0, $fill=false, $reseth=true, $align='', $autopadding=true );
+    $this->pdf->writeHTMLCell( $w, $h, $x, $y, $html, $border, $ln, $fill, $reseth, $align, $autopadding);
     return null;
   }
   private function MultiCell($item, $data){

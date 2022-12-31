@@ -1,5 +1,9 @@
-version: 2.3.1
+version: 2.4.0
 history:
+  2.4.0:
+    date: '2022-12-31'
+    title: HTML
+    description: 'HTML was not working.'
   2.3.1:
     date: '2022-09-08'
     title: Versions
