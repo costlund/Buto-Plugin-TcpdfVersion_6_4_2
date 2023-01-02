@@ -1,5 +1,9 @@
-version: 2.4.0
+version: 2.4.1
 history:
+  2.4.1:
+    date: '2023-01-02'
+    title: Versions
+    description: 'Versions update.'
   2.4.0:
     date: '2022-12-31'
     title: HTML
@@ -86,7 +90,7 @@ plugin:
     version: 1.2.4
   -
     name: i18n/translate_v1
-    version: 1.9.0
+    version: 1.10.0
 sys:
   -
     name: mercury
