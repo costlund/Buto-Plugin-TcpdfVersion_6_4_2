@@ -1,5 +1,9 @@
-version: 2.4.1
+version: 2.5.0
 history:
+  2.5.0:
+    date: '2023-03-29'
+    title: Pages
+    description: 'If param pages not set and param i18n not false we handle an error.'
   2.4.1:
     date: '2023-01-02'
     title: Versions

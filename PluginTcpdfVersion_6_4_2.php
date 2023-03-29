@@ -55,7 +55,7 @@ class PluginTcpdfVersion_6_4_2{
     /**
      * I18N
      */
-    if($data->get('i18n')!==false){
+    if($data->get('pages') && $data->get('i18n')!==false){
       foreach ($data->get('pages') as $key => $value) {
         foreach ($value as $key2 => $value2) {
           $item = new PluginWfArray($value2);
