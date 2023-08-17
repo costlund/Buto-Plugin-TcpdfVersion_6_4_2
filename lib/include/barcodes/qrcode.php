@@ -1234,7 +1234,7 @@ class QRcode {
 	 * @return boolean true of false
 	 */
 	 protected function isdigitat($str, $pos) {
-		if ($pos >= strlen($str)) {
+		if ($pos >= wfPhpfunc::strlen($str)) {
 			return false;
 		}
 		return ((ord($str[$pos]) >= ord('0'))&&(ord($str[$pos]) <= ord('9')));
@@ -1247,7 +1247,7 @@ class QRcode {
 	 * @return boolean true of false
 	 */
 	 protected function isalnumat($str, $pos) {
-		if ($pos >= strlen($str)) {
+		if ($pos >= wfPhpfunc::strlen($str)) {
 			return false;
 		}
 		return ($this->lookAnTable(ord($str[$pos])) >= 0);
@@ -1259,7 +1259,7 @@ class QRcode {
 	 * @return int mode
 	 */
 	 protected function identifyMode($pos) {
-		if ($pos >= strlen($this->dataStr)) {
+		if ($pos >= wfPhpfunc::strlen($this->dataStr)) {
 			return QR_MODE_NL;
 		}
 		$c = $this->dataStr[$pos];
@@ -1268,7 +1268,7 @@ class QRcode {
 		} elseif ($this->isalnumat($this->dataStr, $pos)) {
 			return QR_MODE_AN;
 		} elseif ($this->hint == QR_MODE_KJ) {
-			if ($pos+1 < strlen($this->dataStr)) {
+			if ($pos+1 < wfPhpfunc::strlen($this->dataStr)) {
 				$d = $this->dataStr[$pos+1];
 				$word = (ord($c) << 8) | ord($d);
 				if (($word >= 0x8140 && $word <= 0x9ffc) OR ($word >= 0xe040 && $word <= 0xebbf)) {
@@ -1372,7 +1372,7 @@ class QRcode {
 		$la = $this->lengthIndicator(QR_MODE_AN, $this->version);
 		$ln = $this->lengthIndicator(QR_MODE_NM, $this->version);
 		$p = 1;
-		$dataStrLen = strlen($this->dataStr);
+		$dataStrLen = wfPhpfunc::strlen($this->dataStr);
 		while($p < $dataStrLen) {
 			$mode = $this->identifyMode($p);
 			if ($mode == QR_MODE_KJ) {
@@ -1418,7 +1418,7 @@ class QRcode {
 	 * @return int
 	 */
 	 protected function splitString() {
-		while (strlen($this->dataStr) > 0) {
+		while (wfPhpfunc::strlen($this->dataStr) > 0) {
 			$mode = $this->identifyMode(0);
 			switch ($mode) {
 				case QR_MODE_NM: {
@@ -1448,7 +1448,7 @@ class QRcode {
 			if ($length < 0) {
 				return -1;
 			}
-			$this->dataStr = substr($this->dataStr, $length);
+			$this->dataStr = wfPhpfunc::substr($this->dataStr, $length);
 		}
 		return 0;
 	}
@@ -1457,10 +1457,10 @@ class QRcode {
 	 * toUpper
 	 */
 	 protected function toUpper() {
-		$stringLen = strlen($this->dataStr);
+		$stringLen = wfPhpfunc::strlen($this->dataStr);
 		$p = 0;
 		while ($p < $stringLen) {
-			$mode = $this->identifyMode(substr($this->dataStr, $p), $this->hint);
+			$mode = $this->identifyMode(wfPhpfunc::substr($this->dataStr, $p), $this->hint);
 			if ($mode == QR_MODE_KJ) {
 				$p += 2;
 			} else {
