@@ -127,6 +127,9 @@ class PluginTcpdfVersion_6_4_2{
     /**
      * Footer
      */
+    if($data->get('footer_text')){
+      $data->set('footer_text', str_replace('[now]', date('Y-m-d H:i:s'), $data->get('footer_text')));
+    }
     $this->pdf->footer_text = $data->get('footer_text');
     $this->pdf->Footer();
     /**

@@ -1,5 +1,9 @@
-version: 2.6.0
+version: 2.7.0
 history:
+  2.7.0:
+    date: '2023-09-11'
+    title: 'Footer'
+    description: 'Add replace on [now] in param footer_text.'
   2.6.0:
     date: '2023-08-17'
     title: 'PHP 8.2'
