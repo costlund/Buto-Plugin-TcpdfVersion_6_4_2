@@ -1,5 +1,9 @@
-version: 2.8.0
+version: 2.8.1
 history:
+  2.8.1:
+    date: '2023-10-12'
+    title: 'Readme'
+    description: 'Readme update about html in a Multicell.'
   2.8.0:
     date: '2023-09-13'
     title: 'PHP 8.2'

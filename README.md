@@ -145,13 +145,32 @@ data:
 
 #### Element
 MultiCell and Cell are translated with PluginI18nTranslate_v1. One could unset this with param settings/i18n.
+##### Cell
 ```
         -
-          method: Cell (or MultiCell)
+          method: Cell
           data:
             txt: Home
           settings:
             i18n: false
+```
+##### MultiCell
+```
+        -
+          method: MultiCell
+          data:
+            txt: Home
+          settings:
+            i18n: false
+```
+##### HTML
+Put html in a multicell.
+```
+        -
+          method: MultiCell
+          data:
+            txt: '<h1>Headline</h1>'
+            ishtml: true
 ```
 
 ### New page
