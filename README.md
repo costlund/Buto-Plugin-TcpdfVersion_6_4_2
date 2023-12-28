@@ -107,6 +107,8 @@ data:
             w: 120
             h: 5
         - {method: Line, data: {x1: 10, y1: 150, x2: 100, y2: 150, style: {width: 1}}}
+        # Instead of adding four lines with Line method one could use method LineBox.
+        - {method: LineBox, data: {x1: 10, y1: 34, x2: 200, y2: 34, x3: 200, y3: 54, x4: 10, y4: 54, style: {width: 1}}}
         -
           method: new_page
           _: Add a new page if Y is more than 250.

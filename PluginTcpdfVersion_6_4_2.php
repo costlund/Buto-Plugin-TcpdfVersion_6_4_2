@@ -207,6 +207,8 @@ class PluginTcpdfVersion_6_4_2{
       $this->WriteHTMLCell($item);
     }elseif($method == 'Line'){
       $this->Line($item);
+    }elseif($method == 'LineBox'){
+      $this->LineBox($item);
     }elseif($method == 'Image'){
       $this->Image($item);
     }elseif($method == 'Text'){
@@ -242,6 +244,23 @@ class PluginTcpdfVersion_6_4_2{
       }
     }
     $this->pdf->Line( $x1, $y1, $x2, $y2, $style );
+    return null;
+  }
+  private function LineBox($item){
+    $x1=10; $y1=10; $x2=40; $y2=10; $x3=40; $y3=30; $x4=10; $y4=30; $style = array();
+    if($item->get('data')){
+      foreach ($item->get('data') as $key2 => $value2){
+        if(!is_array($value2)){
+          eval('$'.$key2.' = "'.$value2.'";');
+        }else{
+          eval('$$key2 = $value2;');
+        }
+      }
+    }
+    $this->pdf->Line( $x1, $y1, $x2, $y2, $style );
+    $this->pdf->Line( $x2, $y2, $x3, $y3, $style );
+    $this->pdf->Line( $x3, $y3, $x4, $y4, $style );
+    $this->pdf->Line( $x4, $y4, $x1, $y1, $style );
     return null;
   }
   private function WriteHTML($item){
