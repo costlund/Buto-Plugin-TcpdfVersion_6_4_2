@@ -365,6 +365,15 @@ class PluginTcpdfVersion_6_4_2{
     return null;
   }
   private function Ln($item){
+    /**
+     * 
+     */
+    if($this->hide_element($item)){
+      return null;
+    }
+    /**
+     * 
+     */
     $h = ''; $cell = false;
     if($item->get('data')){foreach ($item->get('data') as $key2 => $value2){eval('$'.$key2.' = "'.$value2.'";');}}
     $this->pdf->Ln( $h, $cell );

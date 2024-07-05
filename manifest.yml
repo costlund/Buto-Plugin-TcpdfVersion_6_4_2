@@ -1,5 +1,9 @@
-version: 2.9.0
+version: 2.10.0
 history:
+  2.10.0:
+    date: '2024-07-03'
+    title: 'Ln'
+    description: 'Hide element if settings enabled/disabled is set.'
   2.9.0:
     date: '2023-12-28'
     title: 'LineBox'
