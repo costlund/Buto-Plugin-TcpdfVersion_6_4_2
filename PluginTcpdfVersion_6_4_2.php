@@ -175,6 +175,12 @@ class PluginTcpdfVersion_6_4_2{
      */
     $data->set('filename', wfSettings::replaceDir($data->get('filename')));
     /**
+     * Create dir if not exist.
+     */
+    if($data->get('filename') && $data->get('dest')=='F'){
+      wfFilesystem::createDir($data->get('filename'));
+    }
+    /**
      * Output.
      */
     $this->pdf->Output($data->get('filename'), $data->get('dest'));

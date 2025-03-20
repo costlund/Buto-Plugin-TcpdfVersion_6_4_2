@@ -1,5 +1,9 @@
-version: 2.10.0
+version: 2.10.1
 history:
+  2.10.1:
+    date: '2025-03-20'
+    title: 'Save pdf'
+    description: 'Create dir if not exist when to save pdf.'
   2.10.0:
     date: '2024-07-03'
     title: 'Ln'
